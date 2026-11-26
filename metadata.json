@@ -1,0 +1,6 @@
+{
+  "name": "7th Heaven Bakery & Cafe – Kurnool",
+  "description": "100% Pure Vegetarian luxury bakery, patisserie, and cafe in Gandhi Nagar, Kurnool. Explore our complete menu, celebration cakes, custom cake enquiries, and café experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
