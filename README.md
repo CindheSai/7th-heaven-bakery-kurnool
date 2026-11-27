@@ -108,3 +108,7 @@ npm start       # Starts production server on 0.0.0.0:$PORT
 4. Start Command: `npm start`
 5. Health Check Path: `/api/health`
 6. Set environment variables: `NODE_ENV=production`, `DATABASE_URL`, `SESSION_SECRET`, `ADMIN_PASSCODE` (optional), `APP_URL`.
+
+<!-- rebuild after fixing Vite base path -->
+
+<!-- rebuild after fixing Vite base path -->
