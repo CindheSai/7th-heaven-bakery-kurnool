@@ -6,12 +6,12 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Base URL for GitHub Pages (repo name as sub‑path)
-    base: '/7th-heaven-bakery-kurnool/',
+    // Serve assets from the Express app's root URL.
+    base: '/',
     plugins: [
       react(),
       tailwindcss(),
-      // Copies src/assets into dist/ so root‑relative URLs like
+      // Copies src/assets into dist/ so root-relative URLs like
       // "/src/assets/images/..." still resolve in production builds.
       {
         name: 'copy-unbundled-src-assets',
@@ -49,7 +49,6 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
