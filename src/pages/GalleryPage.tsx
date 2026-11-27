@@ -143,10 +143,14 @@ export function GalleryPage() {
           role="dialog"
           aria-modal="true"
           aria-label={activeItem.title}
+          onClick={() => setLightboxIdx(null)}
         >
           <button
             type="button"
-            onClick={() => setLightboxIdx(null)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIdx(null);
+            }}
             aria-label="Close gallery viewer"
             className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white inline-flex items-center justify-center transition-colors"
           >
@@ -157,9 +161,10 @@ export function GalleryPage() {
             <>
               <button
                 type="button"
-                onClick={() =>
-                  setLightboxIdx((lightboxIdx - 1 + filtered.length) % filtered.length)
-                }
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIdx((lightboxIdx - 1 + filtered.length) % filtered.length);
+                }}
                 aria-label="Previous image"
                 className="absolute left-4 sm:left-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white inline-flex items-center justify-center transition-colors"
               >
@@ -167,7 +172,10 @@ export function GalleryPage() {
               </button>
               <button
                 type="button"
-                onClick={() => setLightboxIdx((lightboxIdx + 1) % filtered.length)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIdx((lightboxIdx + 1) % filtered.length);
+                }}
                 aria-label="Next image"
                 className="absolute right-4 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white inline-flex items-center justify-center transition-colors"
               >
@@ -176,7 +184,10 @@ export function GalleryPage() {
             </>
           )}
 
-          <div className="max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl">
+          <div
+            className="max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="aspect-[4/3] max-h-[72vh] w-full bg-[#FFF9F1]">
               <SafeImage
                 src={activeItem.image}

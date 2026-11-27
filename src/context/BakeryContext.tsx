@@ -1,4 +1,12 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { INITIAL_STORE_DATA } from '../data/seedData.ts';
 import type {
   CakeCollection,
@@ -33,6 +41,28 @@ const BakeryContext = createContext<BakeryContextValue | null>(null);
 
 const CART_STORAGE_KEY = '7th_heaven_kurnool_cart_v1';
 
+function parseSavedCart(raw: string | null): CartItem[] {
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (entry): entry is CartItem =>
+        Boolean(entry) &&
+        typeof entry.cartKey === 'string' &&
+        typeof entry.itemId === 'string' &&
+        typeof entry.name === 'string' &&
+        typeof entry.category === 'string' &&
+        typeof entry.unitPrice === 'number' &&
+        Number.isFinite(entry.unitPrice) &&
+        typeof entry.quantity === 'number' &&
+        entry.quantity > 0
+    );
+  } catch {
+    return [];
+  }
+}
+
 export function BakeryProvider({ children }: { children: React.ReactNode }) {
   const [settings, setSettings] = useState<SiteSettings>(INITIAL_STORE_DATA.settings);
   const [menuItems, setMenuItems] = useState<MenuItem[]>(INITIAL_STORE_DATA.menuItems);
@@ -42,26 +72,37 @@ export function BakeryProvider({ children }: { children: React.ReactNode }) {
   const [gallery, setGallery] = useState<GalleryItem[]>(INITIAL_STORE_DATA.gallery);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const [cart, setCart] = useState<CartItem[]>(() => {
-    try {
-      const saved = localStorage.getItem(CART_STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return Array.isArray(parsed) ? parsed : [];
-      }
-    } catch {
-      // ignore storage errors
-    }
-    return [];
-  });
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const cartHydratedRef = useRef(false);
+  const noticeTimerRef = useRef<number | null>(null);
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [lastAddedNotice, setLastAddedNotice] = useState<string | null>(null);
 
+  // Hydrate cart on client mount to keep initial render deterministic
   useEffect(() => {
     try {
-      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      const saved = parseSavedCart(window.localStorage.getItem(CART_STORAGE_KEY));
+      if (saved.length > 0) {
+        setCart(saved);
+      }
+    } catch {
+      // ignore storage errors
+    } finally {
+      cartHydratedRef.current = true;
+    }
+    return () => {
+      if (noticeTimerRef.current !== null) {
+        window.clearTimeout(noticeTimerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!cartHydratedRef.current) return;
+    try {
+      window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
     } catch {
       // ignore storage errors
     }
@@ -125,10 +166,11 @@ export function BakeryProvider({ children }: { children: React.ReactNode }) {
 
       const labelText = resolvedLabel ? `${item.name} (${resolvedLabel})` : item.name;
       setLastAddedNotice(`Added ${labelText} to your order bag`);
-      window.setTimeout(() => {
-        setLastAddedNotice((current) =>
-          current === `Added ${labelText} to your order bag` ? null : current
-        );
+      if (noticeTimerRef.current !== null) {
+        window.clearTimeout(noticeTimerRef.current);
+      }
+      noticeTimerRef.current = window.setTimeout(() => {
+        setLastAddedNotice(null);
       }, 2400);
     },
     []

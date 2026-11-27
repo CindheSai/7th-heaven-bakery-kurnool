@@ -1,0 +1,2362 @@
+{
+  "settings": {
+    "brandName": "7th Heaven Bakery & Cafe",
+    "tagline": "A Slice of Happiness",
+    "positioning": "100% PURE VEGETARIAN",
+    "phone": "8885011611",
+    "whatsappNumber": "918885011611",
+    "instagramHandle": "@7thheaven_kurnool",
+    "instagramUrl": "https://www.instagram.com/7thheaven_kurnool",
+    "addressLine1": "40/337, Gandhi Nagar",
+    "addressLine2": "Kurnool",
+    "city": "Kurnool",
+    "state": "Andhra Pradesh",
+    "postalCode": "518001",
+    "country": "India",
+    "hours": "10:00 AM – 10:00 PM",
+    "heroHeadline": "Every Bite Feels Like Heaven.",
+    "heroSubheadline": "Discover delightful creations, handcrafted desserts, irresistible savouries and moments worth celebrating at 7th Heaven Bakery & Cafe.",
+    "promoBanner": "100% Pure Vegetarian Bakery & Patisserie · Open Daily 10:00 AM – 10:00 PM · Gandhi Nagar, Kurnool"
+  },
+  "menuItems": [
+    {
+      "id": "sav-puffs-veg-puff",
+      "name": "Veg Puff",
+      "section": "Savouries & Sips",
+      "category": "Puffs",
+      "price": 35,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-puffs-paneer-puff",
+      "name": "Paneer Puff",
+      "section": "Savouries & Sips",
+      "category": "Puffs",
+      "price": 45,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-croissants-chocolate",
+      "name": "Chocolate",
+      "section": "Savouries & Sips",
+      "category": "Croissants",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-croissants-butter",
+      "name": "Butter",
+      "section": "Savouries & Sips",
+      "category": "Croissants",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-croissants-cheese-garlic",
+      "name": "Cheese Garlic",
+      "section": "Savouries & Sips",
+      "category": "Croissants",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-burgers-veggie",
+      "name": "Veggie",
+      "section": "Savouries & Sips",
+      "category": "Burgers",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-burgers-hash-brown",
+      "name": "Hash Brown",
+      "section": "Savouries & Sips",
+      "category": "Burgers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-burgers-potato-cheese-blast",
+      "name": "Potato Cheese Blast",
+      "section": "Savouries & Sips",
+      "category": "Burgers",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-burgers-paneer",
+      "name": "Paneer",
+      "section": "Savouries & Sips",
+      "category": "Burgers",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-burgers-spicy",
+      "name": "Spicy",
+      "section": "Savouries & Sips",
+      "category": "Burgers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-focaccia-bread",
+      "name": "Focaccia Bread",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 70,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-panini-bread",
+      "name": "Panini Bread",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-quiche",
+      "name": "Quiche",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 80,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-stuffed-bun",
+      "name": "Stuffed Bun",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-paneer-cheese-plate",
+      "name": "Paneer Cheese Plate",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 80,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-snack-bread-korean-cheese-bun",
+      "name": "Korean Cheese Bun",
+      "section": "Savouries & Sips",
+      "category": "Snack Bread",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-rolls-pizza-roll",
+      "name": "Pizza Roll",
+      "section": "Savouries & Sips",
+      "category": "Rolls",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-rolls-paneer-roll",
+      "name": "Paneer Roll",
+      "section": "Savouries & Sips",
+      "category": "Rolls",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-rolls-paneer-cheese-roll",
+      "name": "Paneer Cheese Roll",
+      "section": "Savouries & Sips",
+      "category": "Rolls",
+      "price": 80,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-rolls-veg-tikka",
+      "name": "Veg Tikka",
+      "section": "Savouries & Sips",
+      "category": "Rolls",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-sandwiches-vegetable-cheese",
+      "name": "Vegetable Cheese",
+      "section": "Savouries & Sips",
+      "category": "Sandwiches",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-sandwiches-paneer-cheese",
+      "name": "Paneer Cheese",
+      "section": "Savouries & Sips",
+      "category": "Sandwiches",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-sandwiches-tandoori-paneer",
+      "name": "Tandoori Paneer",
+      "section": "Savouries & Sips",
+      "category": "Sandwiches",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-pizza-veg-pizza",
+      "name": "Veg Pizza",
+      "section": "Savouries & Sips",
+      "category": "Pizza",
+      "variants": [
+        {
+          "label": "6-inch",
+          "price": 135
+        },
+        {
+          "label": "8-inch",
+          "price": 160
+        }
+      ],
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-pizza-margherita",
+      "name": "Margherita",
+      "section": "Savouries & Sips",
+      "category": "Pizza",
+      "variants": [
+        {
+          "label": "6-inch",
+          "price": 120
+        },
+        {
+          "label": "8-inch",
+          "price": 140
+        }
+      ],
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-pizza-italian",
+      "name": "Italian",
+      "section": "Savouries & Sips",
+      "category": "Pizza",
+      "variants": [
+        {
+          "label": "6-inch",
+          "price": 135
+        },
+        {
+          "label": "8-inch",
+          "price": 160
+        }
+      ],
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-pizza-paneer",
+      "name": "Paneer",
+      "section": "Savouries & Sips",
+      "category": "Pizza",
+      "variants": [
+        {
+          "label": "6-inch",
+          "price": 150
+        },
+        {
+          "label": "8-inch",
+          "price": 200
+        }
+      ],
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-fried-momo-s-veg-momo-s",
+      "name": "Veg Momo's",
+      "section": "Savouries & Sips",
+      "category": "Fried Momo's",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-fried-momo-s-paneer-momo-s",
+      "name": "Paneer Momo's",
+      "section": "Savouries & Sips",
+      "category": "Fried Momo's",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-fried-momo-s-schezwan-momo-s",
+      "name": "Schezwan Momo's",
+      "section": "Savouries & Sips",
+      "category": "Fried Momo's",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-salted-fries",
+      "name": "Salted Fries",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-pizza-fries",
+      "name": "Pizza Fries",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-barbeque-fries",
+      "name": "Barbeque Fries",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-magic-masala",
+      "name": "Magic Masala",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-garlic-potato-bites",
+      "name": "Garlic Potato Bites",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-veg-nuggets",
+      "name": "Veg Nuggets",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-potato-wedges",
+      "name": "Potato Wedges",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-cheese-corn-triangles",
+      "name": "Cheese Corn Triangles",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-onion-rings",
+      "name": "Onion Rings",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-cheese-pizza-fingers",
+      "name": "Cheese Pizza Fingers",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-french-fries-munchies-peri-peri-fries",
+      "name": "Peri Peri Fries",
+      "section": "Savouries & Sips",
+      "category": "French Fries & Munchies",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-loaf-bread-milk-bread",
+      "name": "Milk Bread",
+      "section": "Savouries & Sips",
+      "category": "Loaf Bread",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-loaf-bread-brown-bread",
+      "name": "Brown Bread",
+      "section": "Savouries & Sips",
+      "category": "Loaf Bread",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-loaf-bread-multi-grain-bread",
+      "name": "Multi Grain Bread",
+      "section": "Savouries & Sips",
+      "category": "Loaf Bread",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-loaf-bread-oats-bread",
+      "name": "Oats Bread",
+      "section": "Savouries & Sips",
+      "category": "Loaf Bread",
+      "price": 60,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_savoury_bites_1795708275105.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-blueberry",
+      "name": "Blueberry",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-strawberry-bubblegum",
+      "name": "Strawberry Bubblegum",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-mango",
+      "name": "Mango",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 190,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-butterscotch",
+      "name": "Butterscotch",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-oreo",
+      "name": "Oreo",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-kitkat",
+      "name": "KitKat",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 190,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-milk-shakes-chocolaty-excess",
+      "name": "Chocolaty Excess",
+      "section": "Savouries & Sips",
+      "category": "Milk Shakes",
+      "price": 190,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-mint-mojito",
+      "name": "Mint Mojito",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-lemon-iced-tea",
+      "name": "Lemon Iced Tea",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-peach-iced-tea",
+      "name": "Peach Iced Tea",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-passion-fruit-iced-tea",
+      "name": "Passion Fruit Iced Tea",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-strawberry-iced-tea",
+      "name": "Strawberry Iced Tea",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-refreshers-blueberry-iced-tea",
+      "name": "Blueberry Iced Tea",
+      "section": "Savouries & Sips",
+      "category": "Refreshers",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-tiramisu",
+      "name": "Tiramisu",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-turkish-delight",
+      "name": "Turkish Delight",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-irish-caf-hazelnut",
+      "name": "Irish Café & Hazelnut",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-coffee-with-ice-cream",
+      "name": "Coffee with Ice Cream",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-toffee-nut-frappe",
+      "name": "Toffee Nut Frappe",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-chocolaty-frappe",
+      "name": "Chocolaty Frappe",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-cold-coffee-coffee-frappe",
+      "name": "Coffee Frappe",
+      "section": "Savouries & Sips",
+      "category": "Cold Coffee",
+      "price": 170,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-hot-coffee-cappuccino",
+      "name": "Cappuccino",
+      "section": "Savouries & Sips",
+      "category": "Hot Coffee",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-hot-coffee-caf-latte",
+      "name": "Café Latte",
+      "section": "Savouries & Sips",
+      "category": "Hot Coffee",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-hot-coffee-flat-white",
+      "name": "Flat White",
+      "section": "Savouries & Sips",
+      "category": "Hot Coffee",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "sav-hot-coffee-caf-mocha",
+      "name": "Café Mocha",
+      "section": "Savouries & Sips",
+      "category": "Hot Coffee",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_coffee_beverages_1795708275878.jpg"
+    },
+    {
+      "id": "swt-brownies-dark-chocolate",
+      "name": "Dark Chocolate",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-milk-chocolate",
+      "name": "Milk Chocolate",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-nutella",
+      "name": "Nutella",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-choco-chips",
+      "name": "Choco Chips",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-oreo",
+      "name": "Oreo",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-walnuts",
+      "name": "Walnuts",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownies-caramel",
+      "name": "Caramel",
+      "section": "Sweet Side",
+      "category": "Brownies",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-donuts-chocolate-ring",
+      "name": "Chocolate Ring",
+      "section": "Sweet Side",
+      "category": "Donuts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-donuts-rainbow-sprinkle",
+      "name": "Rainbow Sprinkle",
+      "section": "Sweet Side",
+      "category": "Donuts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-donuts-oreo",
+      "name": "Oreo",
+      "section": "Sweet Side",
+      "category": "Donuts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-donuts-chocolate-filled",
+      "name": "Chocolate Filled",
+      "section": "Sweet Side",
+      "category": "Donuts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-donuts-double-chocolate",
+      "name": "Double Chocolate",
+      "section": "Sweet Side",
+      "category": "Donuts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-cup-cakes-chocolate",
+      "name": "Chocolate",
+      "section": "Sweet Side",
+      "category": "Cup Cakes",
+      "price": 30,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cup-cakes-vanilla",
+      "name": "Vanilla",
+      "section": "Sweet Side",
+      "category": "Cup Cakes",
+      "price": 30,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cup-cakes-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "Cup Cakes",
+      "price": 30,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cup-cakes-red-velvet",
+      "name": "Red Velvet",
+      "section": "Sweet Side",
+      "category": "Cup Cakes",
+      "price": 30,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-macarons-peanut-butter",
+      "name": "Peanut Butter",
+      "section": "Sweet Side",
+      "category": "Macarons",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-macarons-black-forest",
+      "name": "Black Forest",
+      "section": "Sweet Side",
+      "category": "Macarons",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-macarons-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "Macarons",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-macarons-strawberry",
+      "name": "Strawberry",
+      "section": "Sweet Side",
+      "category": "Macarons",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-macarons-chocolate",
+      "name": "Chocolate",
+      "section": "Sweet Side",
+      "category": "Macarons",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-edible-cup-mousse-chocolate",
+      "name": "Chocolate",
+      "section": "Sweet Side",
+      "category": "Edible Cup Mousse",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-edible-cup-mousse-coffee",
+      "name": "Coffee",
+      "section": "Sweet Side",
+      "category": "Edible Cup Mousse",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-edible-cup-mousse-strawberry",
+      "name": "Strawberry",
+      "section": "Sweet Side",
+      "category": "Edible Cup Mousse",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-edible-cup-mousse-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "Edible Cup Mousse",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-original-new-york",
+      "name": "Original New York",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-hazelnut",
+      "name": "Hazelnut",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-cookies-cream",
+      "name": "Cookies & Cream",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-strawberry",
+      "name": "Strawberry",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-no-bake-cheesecakes-mango",
+      "name": "Mango",
+      "section": "Sweet Side",
+      "category": "No Bake Cheesecakes",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-triple-chocolate",
+      "name": "Triple Chocolate",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 190,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-nutella",
+      "name": "Nutella",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 190,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-dark-chocolate",
+      "name": "Dark Chocolate",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 180,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 180,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-baked-cheesecakes-strawberry",
+      "name": "Strawberry",
+      "section": "Sweet Side",
+      "category": "Baked Cheesecakes",
+      "price": 180,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-chocolate-mousse",
+      "name": "Chocolate Mousse",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-pineapple",
+      "name": "Pineapple",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-strawberry-delight",
+      "name": "Strawberry Delight",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-blueberry-cheese",
+      "name": "Blueberry Cheese",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-mango-souffl",
+      "name": "Mango Soufflé",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-glass-desserts-oreo-crush",
+      "name": "Oreo Crush",
+      "section": "Sweet Side",
+      "category": "Glass Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tub-desserts-tres-leches",
+      "name": "Tres Leches",
+      "section": "Sweet Side",
+      "category": "Tub Desserts",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tub-desserts-tiramisu",
+      "name": "Tiramisu",
+      "section": "Sweet Side",
+      "category": "Tub Desserts",
+      "price": 160,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tub-desserts-apricot-delight",
+      "name": "Apricot Delight",
+      "section": "Sweet Side",
+      "category": "Tub Desserts",
+      "price": 180,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tub-desserts-nutty-chocolate",
+      "name": "Nutty Chocolate",
+      "section": "Sweet Side",
+      "category": "Tub Desserts",
+      "price": 180,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-cookie-cup-nutella",
+      "name": "Nutella",
+      "section": "Sweet Side",
+      "category": "Cookie Cup",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-cookie-cup-biscoff",
+      "name": "Biscoff",
+      "section": "Sweet Side",
+      "category": "Cookie Cup",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-cookie-cup-dark-chocolate",
+      "name": "Dark Chocolate",
+      "section": "Sweet Side",
+      "category": "Cookie Cup",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-cookie-cup-coffee-biscoff",
+      "name": "Coffee Biscoff",
+      "section": "Sweet Side",
+      "category": "Cookie Cup",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-waffles-honey-butter",
+      "name": "Honey & Butter",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 130,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-cookies-cream",
+      "name": "Cookies & Cream",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-double-trouble",
+      "name": "Double Trouble",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 140,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-vanilla-ice-cream",
+      "name": "Vanilla Ice Cream",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-blueberry-cream-cheese",
+      "name": "Blueberry Cream Cheese",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-strawberry-cream-cheese",
+      "name": "Strawberry Cream Cheese",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-chocolaty-madness",
+      "name": "Chocolaty Madness",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-waffles-nutella-madness",
+      "name": "Nutella Madness",
+      "section": "Sweet Side",
+      "category": "Waffles",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-dark-chocolate",
+      "name": "Dark Chocolate",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-milk-chocolate",
+      "name": "Milk Chocolate",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-triple-chocolate",
+      "name": "Triple Chocolate",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-nutella",
+      "name": "Nutella",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-nutty-chocolate",
+      "name": "Nutty Chocolate",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-tiramisu",
+      "name": "Tiramisu",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-cake-bowl-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "Cake Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg"
+    },
+    {
+      "id": "swt-brownie-bowl-dark-chocolate",
+      "name": "Dark Chocolate",
+      "section": "Sweet Side",
+      "category": "Brownie Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownie-bowl-milk-chocolate",
+      "name": "Milk Chocolate",
+      "section": "Sweet Side",
+      "category": "Brownie Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownie-bowl-nutella",
+      "name": "Nutella",
+      "section": "Sweet Side",
+      "category": "Brownie Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownie-bowl-nutty-chocolate",
+      "name": "Nutty Chocolate",
+      "section": "Sweet Side",
+      "category": "Brownie Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-brownie-bowl-lotus-biscoff",
+      "name": "Lotus Biscoff",
+      "section": "Sweet Side",
+      "category": "Brownie Bowl",
+      "price": 200,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-cake-sicles",
+      "name": "Cake Sicles",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 90,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-lava-cake",
+      "name": "Lava Cake",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 75,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-well-cakes",
+      "name": "Well Cakes",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 135,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-cake-pop",
+      "name": "Cake Pop",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 50,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-choco-ball",
+      "name": "Choco Ball",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 30,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-brownie-with-ice-cream",
+      "name": "Brownie with Ice Cream",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 150,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-heavenly-desserts-cookie-dough-chocolate-pizza",
+      "name": "Cookie Dough Chocolate Pizza",
+      "section": "Sweet Side",
+      "category": "Heavenly Desserts",
+      "price": 100,
+      "unitNote": "Also known as Chocolate Pizza",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tarts-chocolate",
+      "name": "Chocolate",
+      "section": "Sweet Side",
+      "category": "Tarts",
+      "price": 55,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tarts-blueberry",
+      "name": "Blueberry",
+      "section": "Sweet Side",
+      "category": "Tarts",
+      "price": 55,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-tarts-strawberry",
+      "name": "Strawberry",
+      "section": "Sweet Side",
+      "category": "Tarts",
+      "price": 55,
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg"
+    },
+    {
+      "id": "swt-ice-creams-vanilla",
+      "name": "Vanilla",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 70,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-chocolate",
+      "name": "Chocolate",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 80,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-butterscotch",
+      "name": "Butterscotch",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 80,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-mellow-jello",
+      "name": "Mellow Jello",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 80,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-cookies-cream",
+      "name": "Cookies & Cream",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 90,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-sitaphal",
+      "name": "Sitaphal",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 95,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-alphonso-mango",
+      "name": "Alphonso Mango",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 95,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-kulfi",
+      "name": "Kulfi",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 95,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    },
+    {
+      "id": "swt-ice-creams-pista",
+      "name": "Pista",
+      "section": "Sweet Side",
+      "category": "Ice Creams",
+      "price": 95,
+      "unitNote": "per scoop",
+      "isVeg": true,
+      "available": true,
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg"
+    }
+  ],
+  "cakeCollections": [
+    {
+      "id": "cake-classic",
+      "name": "Classic Cakes",
+      "slug": "classic-cakes",
+      "description": "Timeless celebration favourites crafted in Half KG, 1 KG, and 100g pastry portions.",
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg",
+      "halfKgPrice": 350,
+      "oneKgPrice": 700,
+      "pastryPrice": 75,
+      "pastrySizeLabel": "Pastry (100g)",
+      "serveSizeNote": "Calories shown per 100g serving",
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Half KG printed price appears slightly faint in menu photo (read as ₹350 matching 1 KG ₹700); confirm with bakery.",
+      "flavours": [
+        {
+          "name": "Butterscotch",
+          "calories": "302 Kcal"
+        },
+        {
+          "name": "Black Forest",
+          "calories": "285 Kcal"
+        },
+        {
+          "name": "Pineapple",
+          "calories": "279 Kcal",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "cake-premium",
+      "name": "Premium Cakes",
+      "slug": "premium-cakes",
+      "description": "Layered sponge and cream creations featuring berries, coffee, and rich cocoa.",
+      "image": "/src/assets/images/hero_patisserie_cake_1795708272826.jpg",
+      "halfKgPrice": 450,
+      "oneKgPrice": 900,
+      "pastryPrice": 85,
+      "pastrySizeLabel": "Pastry (100g)",
+      "serveSizeNote": "Calories shown per 100g serving",
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Pastry price ₹85 has slight print glare in menu photo; Half KG ₹450 and 1 KG ₹900 extracted from print.",
+      "flavours": [
+        {
+          "name": "Café Delight",
+          "calories": "301 Kcal"
+        },
+        {
+          "name": "Strawberry",
+          "calories": "285 Kcal"
+        },
+        {
+          "name": "Blueberry Bliss Delight",
+          "calories": "285 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Mixed Berries",
+          "calories": "285 Kcal"
+        },
+        {
+          "name": "Creamy Chocolaty Delight",
+          "calories": "316 Kcal"
+        },
+        {
+          "name": "Chocolaty Globe",
+          "calories": "436 Kcal"
+        },
+        {
+          "name": "Dark Overload",
+          "calories": "417 Kcal"
+        },
+        {
+          "name": "Chocolaty Vanilla",
+          "calories": "316 Kcal"
+        }
+      ]
+    },
+    {
+      "id": "cake-exotic",
+      "name": "Exotic Cakes",
+      "slug": "exotic-cakes",
+      "description": "An expansive selection of fruit-infused, caramel, and intense dark chocolate cakes.",
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg",
+      "halfKgPrice": 500,
+      "oneKgPrice": 1000,
+      "pastryPrice": 95,
+      "pastrySizeLabel": "Pastry (100g)",
+      "serveSizeNote": "Calories shown per 100g serving",
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Mango Tango Delight",
+          "calories": "284 Kcal"
+        },
+        {
+          "name": "White Forest",
+          "calories": "282 Kcal"
+        },
+        {
+          "name": "Cherry Mouse",
+          "calories": "321 Kcal"
+        },
+        {
+          "name": "Fruit Chocolate Flavour",
+          "calories": "426 Kcal"
+        },
+        {
+          "name": "Mango & Blueberry",
+          "calories": "284 Kcal"
+        },
+        {
+          "name": "Chocolaty Caramel Indulgence",
+          "calories": "298 Kcal"
+        },
+        {
+          "name": "Milk Chocolate Flavour",
+          "calories": "414 Kcal"
+        },
+        {
+          "name": "Fudgy Excess",
+          "calories": "436 Kcal"
+        },
+        {
+          "name": "Dark Chocolate Flavour",
+          "calories": "422 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Dark Knight",
+          "calories": "436 Kcal"
+        },
+        {
+          "name": "Dark Fantasy",
+          "calories": "419 Kcal"
+        },
+        {
+          "name": "Chocolaty Strawberry",
+          "calories": "427 Kcal"
+        },
+        {
+          "name": "Caramel White Choco Flavour",
+          "calories": "311 Kcal"
+        },
+        {
+          "name": "Tiramisu",
+          "calories": "321 Kcal"
+        },
+        {
+          "name": "Fresh Fruit",
+          "calories": "273 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Dark Mousse",
+          "calories": "316 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Lychee"
+        }
+      ]
+    },
+    {
+      "id": "cake-premium-exotic",
+      "name": "Premium Exotic Cakes",
+      "slug": "premium-exotic-cakes",
+      "description": "Gourmet nut, Belgian-style triple chocolate, red velvet cream cheese, and iconic confections.",
+      "image": "/src/assets/images/hero_patisserie_cake_1795708272826.jpg",
+      "halfKgPrice": 550,
+      "oneKgPrice": 1100,
+      "pastryPrice": 105,
+      "pastrySizeLabel": "Pastry (100g)",
+      "serveSizeNote": "Calories shown per 100g serving (or full cake where printed)",
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Half KG ₹550 is slightly low-contrast in print; 1 KG ₹1100 and Pastry ₹105 are visible.",
+      "flavours": [
+        {
+          "name": "Hazelnut Crunch",
+          "calories": "459 Kcal"
+        },
+        {
+          "name": "Chocolaty Chips",
+          "calories": "466 Kcal"
+        },
+        {
+          "name": "Triple Chocolate Flavour",
+          "calories": "466 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Chocolaty Walnut Bliss",
+          "calories": "464 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Chocolaty Bombs",
+          "calories": "422 Kcal"
+        },
+        {
+          "name": "Red Velvet Dark Fantasy",
+          "calories": "422 Kcal"
+        },
+        {
+          "name": "R. V. Cream Cheese",
+          "calories": "303 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "R. V. Raspberry Choco Flavour",
+          "calories": "427 Kcal"
+        },
+        {
+          "name": "Raspberry Madness",
+          "calories": "282 Kcal"
+        },
+        {
+          "name": "Coconut Bliss",
+          "calories": "300 Kcal"
+        },
+        {
+          "name": "Chocolaty Excess",
+          "calories": "437 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Roasted Almond",
+          "calories": "432 Kcal"
+        },
+        {
+          "name": "KitKat® & Gems®",
+          "calories": "539 Kcal"
+        },
+        {
+          "name": "Nutella® Rocher",
+          "calories": "440 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "KitKat®",
+          "calories": "457 Kcal"
+        },
+        {
+          "name": "Oreos",
+          "calories": "428 Kcal"
+        },
+        {
+          "name": "Cup Cake Drip",
+          "calories": "2184 Kcal"
+        },
+        {
+          "name": "Snickers®",
+          "calories": "2297 Kcal"
+        },
+        {
+          "name": "Pinacolada",
+          "calories": "1429 Kcal"
+        },
+        {
+          "name": "Rainbow",
+          "calories": "1517 Kcal"
+        },
+        {
+          "name": "Cupid",
+          "calories": "2184 Kcal"
+        },
+        {
+          "name": "L'Opera",
+          "calories": "4416 Kcal"
+        }
+      ]
+    },
+    {
+      "id": "cake-supreme",
+      "name": "Supreme Cakes",
+      "slug": "supreme-cakes",
+      "description": "Showstopping patisserie centrepieces including Golden Drip, Lotus Biscoff, and Rose & Pistachio.",
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg",
+      "halfKgPrice": 625,
+      "oneKgPrice": 1250,
+      "serveSizeNote": "Calories shown per 500g serving",
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Flower Basket",
+          "calories": "1473 Kcal"
+        },
+        {
+          "name": "Exquisite Fruit",
+          "calories": "1366 Kcal"
+        },
+        {
+          "name": "Golden Drip",
+          "calories": "2098 Kcal"
+        },
+        {
+          "name": "Lotus Biscoff®",
+          "calories": "1609 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Rose & Pistachio",
+          "calories": "1591 Kcal"
+        },
+        {
+          "name": "Dark Drip Overload",
+          "calories": "2086 Kcal",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "cake-pie",
+      "name": "Pie Cakes",
+      "slug": "pie-cakes",
+      "description": "Rich pie-style baked cakes including Banoffee, seasonal Mango, and Chocolaty Caramel.",
+      "image": "/src/assets/images/exp_brownies_desserts_1795708273736.jpg",
+      "halfKgPrice": 650,
+      "oneKgPrice": 1280,
+      "serveSizeNote": "Calories shown per 500g serving",
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Pie Cakes Half KG (read as ₹650) and 1 KG (read as ₹1280) have print glare on the menu card — confirm before billing.",
+      "flavours": [
+        {
+          "name": "Banoffee",
+          "calories": "1790 Kcal"
+        },
+        {
+          "name": "Mango (seasonal)",
+          "calories": "1769 Kcal"
+        },
+        {
+          "name": "Dark Chocolate Flavour",
+          "calories": "2422 Kcal"
+        },
+        {
+          "name": "Chocolaty Caramel",
+          "calories": "2375 Kcal"
+        }
+      ]
+    },
+    {
+      "id": "cake-indian",
+      "name": "Indian Cakes",
+      "slug": "indian-cakes",
+      "description": "Celebratory fusion cakes inspired by beloved Indian mithai including Rasmalai, Motichoor, and Kaju Katli.",
+      "image": "/src/assets/images/cake_indian_fusion_1795708276162.jpg",
+      "halfKgPrice": 670,
+      "oneKgPrice": 1320,
+      "serveSizeNote": "Calories shown per 500g serving",
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Rasmalai",
+          "calories": "1506 Kcal"
+        },
+        {
+          "name": "Gulab Jamun Tart",
+          "calories": "1881 Kcal"
+        },
+        {
+          "name": "Motichoor",
+          "calories": "1898 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Kaju Katli",
+          "calories": "1980 Kcal"
+        },
+        {
+          "name": "Gulkand",
+          "calories": "1299 Kcal"
+        },
+        {
+          "name": "Coconut Burfi Chocolaty Mousse",
+          "calories": "2010 Kcal"
+        }
+      ]
+    },
+    {
+      "id": "cake-ice-cream",
+      "name": "Ice Cream Cakes",
+      "slug": "ice-cream-cakes",
+      "description": "Chilled 500g serve ice cream cakes priced individually by flavour.",
+      "image": "/src/assets/images/exp_waffles_1795708274888.jpg",
+      "halfKgPrice": null,
+      "oneKgPrice": null,
+      "serveSizeNote": "Serve size: 500 gms · Per-flavour pricing",
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Black Forest",
+          "calories": "1238 Kcal",
+          "price500g": 350
+        },
+        {
+          "name": "Butterscotch",
+          "calories": "1343 Kcal",
+          "price500g": 350,
+          "isSignature": true
+        },
+        {
+          "name": "Chocolaty Chips",
+          "calories": "1555 Kcal",
+          "price500g": 400
+        },
+        {
+          "name": "Mango",
+          "calories": "1257 Kcal",
+          "price500g": 400
+        },
+        {
+          "name": "Red Velvet",
+          "calories": "1399 Kcal",
+          "price500g": 500
+        },
+        {
+          "name": "American Nuts",
+          "calories": "933 Kcal",
+          "price500g": 500
+        }
+      ]
+    },
+    {
+      "id": "cake-no-bake-cheesecake",
+      "name": "No-Bake Cheesecakes",
+      "slug": "no-bake-cheesecakes",
+      "description": "Silky chilled cheesecakes available in Half KG, 1 KG, and 120g pastry slices.",
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg",
+      "halfKgPrice": 585,
+      "oneKgPrice": 1170,
+      "pastryPrice": 95,
+      "pastrySizeLabel": "Pastry (120g)",
+      "serveSizeNote": "Calories shown per 120g serving (Note: café slice menu lists ₹135)",
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Cake menu Half KG (read as ₹585) and Pastry 120g (read as ₹95) have glare on print; 1 KG ₹1170 is clear.",
+      "flavours": [
+        {
+          "name": "Original New York",
+          "calories": "203 Kcal"
+        },
+        {
+          "name": "Hazelnut",
+          "calories": "165 Kcal"
+        },
+        {
+          "name": "Cookies & Cream",
+          "calories": "285 Kcal",
+          "isSignature": true
+        },
+        {
+          "name": "Blueberry Bliss Delight",
+          "calories": "174 Kcal"
+        },
+        {
+          "name": "Strawberry",
+          "calories": "174 Kcal"
+        },
+        {
+          "name": "Lotus Biscoff®",
+          "calories": "167 Kcal"
+        },
+        {
+          "name": "Mango Symphony",
+          "calories": "174 Kcal"
+        }
+      ]
+    },
+    {
+      "id": "cake-baked-cheesecake",
+      "name": "Baked Cheesecakes",
+      "slug": "baked-cheesecakes",
+      "description": "Rich oven-baked cheesecakes with individual pastry slice prices and serving weights.",
+      "image": "/src/assets/images/exp_cheesecakes_1795708273644.jpg",
+      "halfKgPrice": 750,
+      "oneKgPrice": 1450,
+      "serveSizeNote": "Half KG ₹750 · 1 KG ₹1450 · Individual pastry prices shown per flavour",
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Triple Chocolate Flavour",
+          "calories": "440 Kcal",
+          "pastryPrice": 155,
+          "serveSizeGrams": 144
+        },
+        {
+          "name": "Lotus Biscoff®",
+          "calories": "439 Kcal",
+          "pastryPrice": 195,
+          "serveSizeGrams": 109
+        },
+        {
+          "name": "Nutella®",
+          "calories": "435 Kcal",
+          "pastryPrice": 165,
+          "serveSizeGrams": 108
+        },
+        {
+          "name": "Dark Chocolate Flavour",
+          "calories": "443 Kcal",
+          "pastryPrice": 155,
+          "serveSizeGrams": 114
+        },
+        {
+          "name": "Sea Salt Caramel",
+          "calories": "421 Kcal",
+          "pastryPrice": 155,
+          "serveSizeGrams": 113
+        },
+        {
+          "name": "Blueberry",
+          "calories": "402 Kcal",
+          "pastryPrice": 170,
+          "serveSizeGrams": 114
+        },
+        {
+          "name": "Strawberry Blossom",
+          "calories": "402 Kcal",
+          "pastryPrice": 165,
+          "serveSizeGrams": 114
+        }
+      ]
+    },
+    {
+      "id": "cake-photo",
+      "name": "Photo Cake",
+      "slug": "photo-cake",
+      "description": "We print the photograph of your choice on an edible paper with edible ink and place it on the cake you prefer. This is the best cake to cherish special memories and moments.",
+      "image": "/src/assets/images/exp_signature_cakes_1795708273107.jpg",
+      "halfKgPrice": 655,
+      "oneKgPrice": 1250,
+      "priceVerificationStatus": "needs_verification",
+      "verificationNote": "Half KG price (read as ₹655) is softly printed on the cake card; 1 KG ₹1250 is clearly visible.",
+      "flavours": [
+        {
+          "name": "Custom Edible Print on Preferred Base Flavour"
+        }
+      ],
+      "isCustomCategory": true
+    },
+    {
+      "id": "cake-shape",
+      "name": "Shape Cake",
+      "slug": "shape-cake",
+      "description": "We create unique cakes of different shapes made using cream frosting. Cake shaped like a car or a doll? We have you covered!",
+      "image": "/src/assets/images/cake_custom_fondant_1795708277102.jpg",
+      "halfKgPrice": null,
+      "oneKgPrice": null,
+      "perKgPrice": 1400,
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Car, Doll & Custom Cream-Frosted Shapes"
+        }
+      ],
+      "isCustomCategory": true
+    },
+    {
+      "id": "cake-3d-customised",
+      "name": "3D Customised Cake",
+      "slug": "3d-customised-cake",
+      "description": "We design cakes as per your desire using fondant. Get a specialized multi-tiered wedding cake or a detailed handbag cake, the sky's the limit!",
+      "image": "/src/assets/images/cake_custom_fondant_1795708277102.jpg",
+      "halfKgPrice": null,
+      "oneKgPrice": null,
+      "perKgPrice": 1750,
+      "priceVerificationStatus": "verified",
+      "flavours": [
+        {
+          "name": "Multi-Tiered Wedding Cakes"
+        },
+        {
+          "name": "Sculpted Fondant Theme Cakes"
+        }
+      ],
+      "isCustomCategory": true
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-kurnool-1",
+      "title": "7th Heaven Bakery & Cafe Storefront",
+      "category": "Café Experience",
+      "image": "/assets/gallery/kurnool_store_0.jpg",
+      "caption": "40/337, Gandhi Nagar, Kurnool · Storefront exterior",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-2",
+      "title": "Patisserie Counter & Display Lounge",
+      "category": "Café Experience",
+      "image": "/assets/gallery/kurnool_store_4.jpg",
+      "caption": "Inside 7th Heaven Bakery & Cafe, Gandhi Nagar, Kurnool",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-3",
+      "title": "Dine-In Seating & Warm Ambience",
+      "category": "Café Experience",
+      "image": "/assets/gallery/kurnool_store_7.jpg",
+      "caption": "Café seating area at our Gandhi Nagar outlet",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-4",
+      "title": "Illuminated Cake & Jar Dessert Showcase",
+      "category": "Signature Cakes",
+      "image": "/assets/gallery/kurnool_store_8.jpg",
+      "caption": "Chilled glass counter featuring celebration cakes and glass desserts",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-5",
+      "title": "Celebration Cakes Display Counter",
+      "category": "Signature Cakes",
+      "image": "/assets/gallery/kurnool_store_1.jpg",
+      "caption": "Freshly displayed butterscotch, chocolate, and fruit celebration cakes",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-6",
+      "title": "Dark Chocolate Rose Celebration Cake",
+      "category": "Signature Cakes",
+      "image": "/assets/gallery/real_kurnool_1.jpg",
+      "caption": "Handcrafted chocolate cake with piped dark chocolate roses",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-7",
+      "title": "Chocolate Truffle & Exotic Cake Selection",
+      "category": "Signature Cakes",
+      "image": "/assets/gallery/kurnool_store_11.jpg",
+      "caption": "Assorted truffle, white forest, and exotic cakes in our display",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-8",
+      "title": "Classic Pineapple & Butterscotch Cake",
+      "category": "Signature Cakes",
+      "image": "/assets/gallery/kurnool_store_5.jpg",
+      "caption": "Glazed yellow celebration cake finished with dark chocolate curls",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-9",
+      "title": "Signature Cookie Dough Chocolate Pizza",
+      "category": "Desserts",
+      "image": "/assets/gallery/kurnool_store_3.jpg",
+      "caption": "Topped with chocolate chips, almonds, gems, and crisp wafer pieces",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-10",
+      "title": "Brownies, Donuts, Cupcakes & Loaf Breads",
+      "category": "Brownies",
+      "image": "/assets/gallery/kurnool_store_12.jpg",
+      "caption": "Freshly stocked counter of brownies, donuts, cupcakes, and breads",
+      "isAuthenticBusinessPhoto": true
+    },
+    {
+      "id": "gal-kurnool-11",
+      "title": "Festive Cashew & Dry Fruit Cake",
+      "category": "Desserts",
+      "image": "/assets/gallery/kurnool_store_13.jpg",
+      "caption": "Rich plum and cashew dry-fruit cake from 7th Heaven Kurnool",
+      "isAuthenticBusinessPhoto": true
+    }
+  ],
+  "enquiries": [],
+  "orders": [],
+  "contacts": [],
+  "sessionSecret": "22cf11c81219c26408051ab5af222de51b08d44079eef51578f99a3d271d2f37"
+}

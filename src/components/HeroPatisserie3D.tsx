@@ -362,7 +362,15 @@ export function HeroPatisserie3D({ fallbackImage, fallbackAlt }: HeroPatisserie3
     const clock = new THREE.Clock();
 
     function afterDraw(cb: () => void) {
-      const gl = renderer.getContext() as WebGL2RenderingContext;
+      const gl = renderer.getContext();
+      const isWebGL2 =
+        typeof WebGL2RenderingContext !== 'undefined' &&
+        gl instanceof WebGL2RenderingContext &&
+        typeof gl.fenceSync === 'function';
+      if (!isWebGL2) {
+        frameId = window.setTimeout(cb, 80);
+        return;
+      }
       const sync = gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE, 0);
       gl.flush();
       const poll = () => {

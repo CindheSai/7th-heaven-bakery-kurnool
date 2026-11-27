@@ -3,21 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { CartDrawer } from './components/CartDrawer.tsx';
+import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { Footer } from './components/Footer.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { SearchModal } from './components/SearchModal.tsx';
 import { BakeryProvider, useBakery } from './context/BakeryContext.tsx';
 import { AboutPage } from './pages/AboutPage.tsx';
-import { AdminPage } from './pages/AdminPage.tsx';
 import { CakesPage } from './pages/CakesPage.tsx';
 import { CartPage } from './pages/CartPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { GalleryPage } from './pages/GalleryPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
 import { MenuPage } from './pages/MenuPage.tsx';
+import { ProductDetailPage } from './pages/ProductDetailPage.tsx';
+
+const AdminPage = lazy(() =>
+  import('./pages/AdminPage.tsx').then((mod) => ({ default: mod.AdminPage }))
+);
 
 const ROUTE_TITLES: Record<string, string> = {
   '/': '7th Heaven Bakery & Cafe – Pure Veg Bakery & Cakes in Kurnool',
@@ -34,8 +39,11 @@ function RouteEffects() {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
-    document.title =
-      ROUTE_TITLES[pathname] || '7th Heaven Bakery & Cafe – Pure Veg Bakery & Cakes in Kurnool';
+    if (!pathname.startsWith('/product/')) {
+      document.title =
+        ROUTE_TITLES[pathname] ||
+        '7th Heaven Bakery & Cafe – Pure Veg Bakery & Cakes in Kurnool';
+    }
   }, [pathname]);
   return null;
 }
@@ -62,23 +70,36 @@ function ToastBanner() {
   );
 }
 
+function RouteLoadingFallback() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center bg-white">
+      <p className="text-sm text-[#81766D]">Loading...</p>
+    </div>
+  );
+}
+
 function AppShell() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#28231F]">
       <RouteEffects />
       <Navbar />
       <div className="flex-1">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/cakes" element={<CakesPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <ErrorBoundary>
+          <Suspense fallback={<RouteLoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/menu" element={<MenuPage />} />
+              <Route path="/product/:id" element={<ProductDetailPage />} />
+              <Route path="/cakes" element={<CakesPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/admin" element={<AdminPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </div>
       <Footer />
       <CartDrawer />

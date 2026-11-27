@@ -1,12 +1,25 @@
 import crypto from 'crypto';
 import type { NextFunction, Request, Response } from 'express';
-import { readStore, writeStore } from './store.ts';
+import {
+  getAdminCredential,
+  getSessionSecretFromStore,
+  saveAdminCredential,
+} from './store.ts';
 
-const EPHEMERAL_SESSION_SECRET = crypto.randomBytes(32).toString('hex');
+export const ADMIN_COOKIE_NAME = '7h_admin_session';
+const TOKEN_TTL_MS = 1000 * 60 * 60 * 12; // 12 hours
 
-function getSessionSecret(): string {
+let cachedSecret: string | null = null;
+
+async function getSessionSecret(): Promise<string> {
   const configured = process.env.SESSION_SECRET?.trim();
-  return configured && configured.length >= 16 ? configured : EPHEMERAL_SESSION_SECRET;
+  if (configured && configured.length >= 16) {
+    return configured;
+  }
+  if (!cachedSecret) {
+    cachedSecret = await getSessionSecretFromStore();
+  }
+  return cachedSecret;
 }
 
 export function getEnvAdminPasscode(): string | null {
@@ -14,52 +27,60 @@ export function getEnvAdminPasscode(): string | null {
   return val && val.length > 0 ? val : null;
 }
 
-export function getAuthStatus(): {
+export async function getAuthStatus(req?: Request): Promise<{
   configured: boolean;
   mode: 'env_passcode' | 'claimed_password' | 'claim_required';
-} {
+  authenticated: boolean;
+}> {
+  const authenticated = req ? await isAdminAuthenticated(req) : false;
   if (getEnvAdminPasscode()) {
-    return { configured: true, mode: 'env_passcode' };
+    return { configured: true, mode: 'env_passcode', authenticated };
   }
-  const store = readStore();
-  if (store.adminCredential?.hash && store.adminCredential?.salt) {
-    return { configured: true, mode: 'claimed_password' };
+  const cred = await getAdminCredential();
+  if (cred?.hash && cred?.salt) {
+    return { configured: true, mode: 'claimed_password', authenticated };
   }
-  return { configured: false, mode: 'claim_required' };
+  return { configured: false, mode: 'claim_required', authenticated };
 }
 
 function hashPasswordScrypt(password: string, salt: string): Buffer {
   return crypto.scryptSync(password, salt, 64);
 }
 
-export function claimAdminPassword(password: string): { ok: boolean; error?: string } {
+export async function claimAdminPassword(
+  password: string
+): Promise<{ ok: boolean; error?: string }> {
   if (getEnvAdminPasscode()) {
-    return { ok: false, error: 'Admin passcode is already configured via environment secrets.' };
+    return {
+      ok: false,
+      error: 'Admin passcode is already configured via environment secrets.',
+    };
   }
-  const store = readStore();
-  if (store.adminCredential?.hash) {
+  const existing = await getAdminCredential();
+  if (existing?.hash) {
     return { ok: false, error: 'Admin access has already been claimed.' };
   }
   const salt = crypto.randomBytes(16).toString('hex');
   const hash = hashPasswordScrypt(password, salt).toString('hex');
-  store.adminCredential = {
+  const saved = await saveAdminCredential({
     salt,
     hash,
     claimedAt: new Date().toISOString(),
-  };
-  writeStore(store);
+  });
+  if (!saved) {
+    return { ok: false, error: 'Admin access has already been claimed.' };
+  }
   return { ok: true };
 }
 
-export function verifyAdminPassword(password: string): boolean {
+export async function verifyAdminPassword(password: string): Promise<boolean> {
   const envPass = getEnvAdminPasscode();
   if (envPass) {
     const a = crypto.createHash('sha256').update(password).digest();
     const b = crypto.createHash('sha256').update(envPass).digest();
     return crypto.timingSafeEqual(a, b);
   }
-  const store = readStore();
-  const cred = store.adminCredential;
+  const cred = await getAdminCredential();
   if (!cred?.salt || !cred?.hash) {
     return false;
   }
@@ -77,29 +98,31 @@ interface TokenPayload {
   exp: number;
 }
 
-export function createAdminToken(): string {
+export async function createAdminToken(): Promise<string> {
   const now = Date.now();
   const payload: TokenPayload = {
     role: 'admin',
     iat: now,
-    exp: now + 1000 * 60 * 60 * 12, // 12 hours
+    exp: now + TOKEN_TTL_MS,
   };
   const encodedPayload = Buffer.from(JSON.stringify(payload), 'utf8').toString('base64url');
+  const secret = await getSessionSecret();
   const sig = crypto
-    .createHmac('sha256', getSessionSecret())
+    .createHmac('sha256', secret)
     .update(encodedPayload)
     .digest('base64url');
   return `${encodedPayload}.${sig}`;
 }
 
-export function verifyAdminToken(token: string): boolean {
+export async function verifyAdminToken(token: string): Promise<boolean> {
   const parts = token.split('.');
   if (parts.length !== 2) return false;
   const [encodedPayload, providedSig] = parts;
   if (!encodedPayload || !providedSig) return false;
 
+  const secret = await getSessionSecret();
   const expectedSig = crypto
-    .createHmac('sha256', getSessionSecret())
+    .createHmac('sha256', secret)
     .update(encodedPayload)
     .digest('base64url');
 
@@ -121,16 +144,64 @@ export function verifyAdminToken(token: string): boolean {
   }
 }
 
-export function requireAdmin(req: Request, res: Response, next: NextFunction): void {
+function extractCookieToken(req: Request): string | null {
+  const cookieHeader = req.headers.cookie;
+  if (!cookieHeader) return null;
+  for (const part of cookieHeader.split(';')) {
+    const idx = part.indexOf('=');
+    if (idx === -1) continue;
+    const key = part.slice(0, idx).trim();
+    if (key === ADMIN_COOKIE_NAME) {
+      return decodeURIComponent(part.slice(idx + 1).trim());
+    }
+  }
+  return null;
+}
+
+function extractTokenFromRequest(req: Request): string | null {
   const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    res.status(401).json({ error: 'Authentication required.' });
-    return;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const bearer = authHeader.slice('Bearer '.length).trim();
+    if (bearer) return bearer;
   }
-  const token = authHeader.slice('Bearer '.length).trim();
-  if (!verifyAdminToken(token)) {
-    res.status(401).json({ error: 'Invalid or expired admin session.' });
-    return;
+  return extractCookieToken(req);
+}
+
+export async function isAdminAuthenticated(req: Request): Promise<boolean> {
+  const token = extractTokenFromRequest(req);
+  if (!token) return false;
+  return verifyAdminToken(token);
+}
+
+export function setAdminSessionCookie(req: Request, res: Response, token: string): void {
+  const isHttps =
+    req.secure || String(req.headers['x-forwarded-proto'] || '').split(',')[0].trim() === 'https';
+  res.cookie(ADMIN_COOKIE_NAME, token, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: isHttps,
+    path: '/',
+    maxAge: TOKEN_TTL_MS,
+  });
+}
+
+export function clearAdminSessionCookie(res: Response): void {
+  res.clearCookie(ADMIN_COOKIE_NAME, { path: '/' });
+}
+
+export async function requireAdmin(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  try {
+    const ok = await isAdminAuthenticated(req);
+    if (!ok) {
+      res.status(401).json({ error: 'Authentication required.' });
+      return;
+    }
+    next();
+  } catch (err) {
+    next(err);
   }
-  next();
 }

@@ -14,7 +14,7 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
-  const { cartCount, setIsCartOpen, setIsSearchOpen } = useBakery();
+  const { cartCount, setIsCartOpen, setIsSearchOpen, settings } = useBakery();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -207,7 +207,7 @@ export function Navbar() {
                 Order Now
               </button>
               <p className="text-xs text-[#81766D] text-center">
-                Open Daily · 10:00 AM – 10:00 PM
+                Open Daily · {settings.hours}
               </p>
             </div>
           </div>

@@ -44,6 +44,15 @@ export function CakesPage() {
     whatsappUrl: string;
   } | null>(null);
 
+  useEffect(() => {
+    if (!showRefModal) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowRefModal(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [showRefModal]);
+
   const selectedCollectionObj = useMemo(
     () => cakeCollections.find((c) => c.name === cakeCategory) || cakeCollections[0],
     [cakeCollections, cakeCategory]
@@ -693,8 +702,12 @@ export function CakesPage() {
           role="dialog"
           aria-modal="true"
           aria-label="Original Cake Catalogue Reference"
+          onClick={() => setShowRefModal(false)}
         >
-          <div className="relative w-full max-w-4xl bg-white rounded-2xl border border-[#EEE7DF] overflow-hidden shadow-2xl">
+          <div
+            className="relative w-full max-w-4xl bg-white rounded-2xl border border-[#EEE7DF] overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="px-5 py-3.5 border-b border-[#EEE7DF] flex items-center justify-between">
               <p className="text-sm font-semibold text-[#28231F]">
                 Original In-Store Cake Catalogue Photograph

@@ -1,8 +1,17 @@
-import { MessageCircle, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
+import {
+  AlertCircle,
+  CheckCircle2,
+  MessageCircle,
+  Minus,
+  Plus,
+  ShoppingBag,
+  Trash2,
+} from 'lucide-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { VegMark } from '../components/BrandMark.tsx';
 import { useBakery } from '../context/BakeryContext.tsx';
+import type { OrderRequest } from '../types/bakery.ts';
 
 export function CartPage() {
   const {
@@ -21,36 +30,82 @@ export function CartPage() {
     'Store Pickup'
   );
   const [notes, setNotes] = useState('');
-  const [sentNotice, setSentNotice] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [confirmedOrder, setConfirmedOrder] = useState<{
+    order: OrderRequest;
+    whatsappUrl: string;
+  } | null>(null);
 
-  const handleSendOrderRequest = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (cart.length === 0) return;
-
+  const buildWhatsAppUrl = (order: OrderRequest) => {
     const lines = [
-      `Hello ${settings.brandName}, here is my Order Request:`,
+      `Hello ${settings.brandName}, here is my Order Request (${order.id}):`,
       '',
-      ...cart.map(
+      ...order.items.map(
         (item, i) =>
           `${i + 1}. ${item.name}${item.variantLabel ? ` (${item.variantLabel})` : ''} × ${
             item.quantity
           } = ₹${item.unitPrice * item.quantity}`
       ),
       '',
-      `Estimated Subtotal: ₹${cartSubtotal}`,
-      `Order Type: ${fulfillment}`,
-      customerName.trim() ? `Customer Name: ${customerName.trim()}` : '',
-      customerPhone.trim() ? `Phone: ${customerPhone.trim()}` : '',
-      notes.trim() ? `Notes: ${notes.trim()}` : '',
+      `Estimated Subtotal: ₹${order.estimatedSubtotal}`,
+      `Order Type: ${order.fulfillment}`,
+      `Customer Name: ${order.customerName}`,
+      `Phone: ${order.mobileNumber}`,
+      order.notes ? `Notes: ${order.notes}` : '',
       '',
       'Note: Please confirm availability and final total.',
     ].filter(Boolean);
 
-    const url = `https://wa.me/${settings.whatsappNumber}?text=${encodeURIComponent(
+    return `https://wa.me/${settings.whatsappNumber}?text=${encodeURIComponent(
       lines.join('\n')
     )}`;
-    setSentNotice(true);
-    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleSendOrderRequest = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (cart.length === 0) return;
+
+    setFormError(null);
+    if (customerName.trim().length < 2) {
+      setFormError('Please enter your name.');
+      return;
+    }
+    if (!/^[0-9+\-\s]{10,15}$/.test(customerPhone.trim())) {
+      setFormError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customerName: customerName.trim(),
+          mobileNumber: customerPhone.trim(),
+          fulfillment,
+          notes: notes.trim() || undefined,
+          items: cart.map((c) => ({
+            itemId: c.itemId,
+            variantLabel: c.variantLabel,
+            quantity: c.quantity,
+          })),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Could not submit your order request.');
+      }
+
+      const whatsappUrl = buildWhatsAppUrl(data.order);
+      setConfirmedOrder({ order: data.order, whatsappUrl });
+      clearCart();
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : 'Something went wrong.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -61,19 +116,82 @@ export function CartPage() {
             <VegMark className="w-3.5 h-3.5" />
             <span>100% Pure Vegetarian</span>
             <span aria-hidden="true">·</span>
-            <span>WhatsApp Order Request</span>
+            <span>Counter Order Request</span>
           </div>
           <h1 className="font-editorial text-4xl sm:text-5xl font-semibold text-[#28231F]">
             Your Order Bag
           </h1>
           <p className="text-sm text-[#81766D]">
-            Review your items and send an order enquiry directly to our Gandhi Nagar, Kurnool counter. No online payment is collected on this page.
+            Submit an order request to our Gandhi Nagar, {settings.city} counter and optionally continue via WhatsApp. No online payment is collected on this page.
           </p>
         </div>
       </section>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {cart.length === 0 ? (
+        {confirmedOrder ? (
+          <div className="max-w-2xl mx-auto rounded-3xl border border-[#F36B21]/40 bg-[#FFF9F1] p-7 sm:p-10 space-y-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-[#F36B21] shrink-0 mt-0.5" />
+              <div className="space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#C94E16]">
+                  Order Request Recorded · {confirmedOrder.order.id}
+                </p>
+                <h2 className="font-editorial text-3xl font-semibold text-[#28231F]">
+                  Thank you, {confirmedOrder.order.customerName}
+                </h2>
+                <p className="text-sm text-[#81766D]">
+                  Your request has been saved for our {settings.city} team ({confirmedOrder.order.fulfillment}). No online payment was processed; our counter confirms availability and final billing directly.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-[#EEE7DF] p-5 space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#81766D]">
+                Requested Items
+              </p>
+              <ul className="divide-y divide-[#EEE7DF] text-sm">
+                {confirmedOrder.order.items.map((it, idx) => (
+                  <li
+                    key={`${it.itemId}-${idx}`}
+                    className="py-2 flex items-center justify-between gap-4"
+                  >
+                    <span>
+                      {it.name}
+                      {it.variantLabel ? ` (${it.variantLabel})` : ''} × {it.quantity}
+                    </span>
+                    <span className="font-semibold tabular-nums">
+                      ₹{it.unitPrice * it.quantity}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-3 border-t border-[#EEE7DF] flex items-baseline justify-between">
+                <span className="text-sm text-[#81766D]">Estimated Subtotal</span>
+                <span className="text-xl font-semibold text-[#28231F] tabular-nums">
+                  ₹{confirmedOrder.order.estimatedSubtotal}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={confirmedOrder.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F36B21] hover:bg-[#C94E16] text-white text-xs font-semibold uppercase tracking-wide transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Send Copy via WhatsApp</span>
+              </a>
+              <Link
+                to="/menu"
+                className="px-6 py-3 rounded-full border border-[#28231F] text-[#28231F] hover:bg-[#28231F] hover:text-white text-xs font-semibold uppercase tracking-wide transition-colors"
+              >
+                Back to Menu
+              </Link>
+            </div>
+          </div>
+        ) : cart.length === 0 ? (
           <div className="max-w-lg mx-auto py-16 px-6 text-center rounded-3xl border border-[#EEE7DF] bg-[#FFF9F1]/40 space-y-5">
             <div className="w-14 h-14 mx-auto rounded-full bg-white border border-[#EEE7DF] flex items-center justify-center text-[#F36B21]">
               <ShoppingBag className="w-6 h-6" strokeWidth={1.5} />
@@ -181,7 +299,7 @@ export function CartPage() {
               </div>
             </div>
 
-            {/* Order Summary & WhatsApp Request Form */}
+            {/* Order Summary & Persisted Request Form */}
             <form
               onSubmit={handleSendOrderRequest}
               className="lg:col-span-5 rounded-3xl border border-[#EEE7DF] bg-[#FFF9F1] p-6 sm:p-8 space-y-6"
@@ -266,25 +384,27 @@ export function CartPage() {
                   </span>
                 </div>
                 <p className="text-xs text-[#81766D] leading-relaxed">
-                  This sends an order enquiry to 7th Heaven Bakery &amp; Cafe via WhatsApp. No payment has been processed; your order is confirmed once verified by our staff.
+                  Submitting saves your order request for {settings.brandName} ({settings.city}). No online payment is collected; our staff confirms availability and final billing.
                 </p>
               </div>
 
-              {sentNotice && (
+              {formError && (
                 <div
-                  role="status"
-                  className="p-3.5 rounded-xl bg-white border border-[#F36B21]/40 text-xs text-[#28231F]"
+                  role="alert"
+                  className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 flex items-center gap-2"
                 >
-                  WhatsApp order request window opened. Your bag items remain saved here until you clear them.
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>{formError}</span>
                 </div>
               )}
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#F36B21] hover:bg-[#C94E16] text-white text-xs font-semibold uppercase tracking-wide transition-colors"
+                disabled={submitting}
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-[#F36B21] hover:bg-[#C94E16] disabled:opacity-60 text-white text-xs font-semibold uppercase tracking-wide transition-colors"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>Send Order Request via WhatsApp</span>
+                <ShoppingBag className="w-4 h-4" />
+                <span>{submitting ? 'Submitting Order Request...' : 'Submit Order Request'}</span>
               </button>
             </form>
           </div>

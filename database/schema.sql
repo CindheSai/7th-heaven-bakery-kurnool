@@ -1,8 +1,8 @@
--- PostgreSQL / Supabase Reference Schema for 7th Heaven Bakery & Cafe
--- Note: The live Express backend persists to server/data/store.json out of the box
--- and can be switched to PostgreSQL using these exact relational tables.
+-- PostgreSQL / Supabase Schema for 7th Heaven Bakery & Cafe
+-- Automatically applied on server boot when DATABASE_URL is configured,
+-- or run manually against a fresh PostgreSQL database.
 
-CREATE TABLE site_settings (
+CREATE TABLE IF NOT EXISTS site_settings (
   id INTEGER PRIMARY KEY DEFAULT 1,
   brand_name TEXT NOT NULL,
   tagline TEXT NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE site_settings (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE menu_items (
+CREATE TABLE IF NOT EXISTS menu_items (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   section TEXT NOT NULL CHECK (section IN ('Savouries & Sips', 'Sweet Side')),
@@ -36,11 +36,12 @@ CREATE TABLE menu_items (
   available BOOLEAN NOT NULL DEFAULT TRUE,
   image TEXT,
   description TEXT,
+  sort_order INTEGER NOT NULL DEFAULT 0,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE cake_collections (
+CREATE TABLE IF NOT EXISTS cake_collections (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
   slug TEXT UNIQUE NOT NULL,
@@ -56,10 +57,11 @@ CREATE TABLE cake_collections (
   verification_note TEXT,
   flavours JSONB NOT NULL DEFAULT '[]'::JSONB,
   is_custom_category BOOLEAN NOT NULL DEFAULT FALSE,
+  sort_order INTEGER NOT NULL DEFAULT 0,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE cake_enquiries (
+CREATE TABLE IF NOT EXISTS cake_enquiries (
   id TEXT PRIMARY KEY,
   customer_name TEXT NOT NULL,
   mobile_number TEXT NOT NULL,
@@ -67,26 +69,63 @@ CREATE TABLE cake_enquiries (
   preferred_flavour TEXT NOT NULL,
   cake_weight TEXT NOT NULL,
   shape_or_design TEXT NOT NULL,
-  required_date DATE NOT NULL,
+  required_date TEXT NOT NULL,
   reference_image_url TEXT,
   instructions TEXT,
   status TEXT NOT NULL DEFAULT 'New' CHECK (status IN ('New', 'Reviewed', 'Confirmed', 'Completed')),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE gallery_items (
+CREATE TABLE IF NOT EXISTS order_requests (
+  id TEXT PRIMARY KEY,
+  customer_name TEXT NOT NULL,
+  mobile_number TEXT NOT NULL,
+  fulfillment TEXT NOT NULL,
+  items JSONB NOT NULL DEFAULT '[]'::JSONB,
+  estimated_subtotal INTEGER NOT NULL,
+  notes TEXT,
+  status TEXT NOT NULL DEFAULT 'New' CHECK (status IN ('New', 'Confirmed', 'Ready', 'Completed', 'Cancelled')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT,
+  subject TEXT NOT NULL,
+  message TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'New' CHECK (status IN ('New', 'Replied', 'Resolved')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS gallery_items (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
   category TEXT NOT NULL,
   image TEXT NOT NULL,
   caption TEXT NOT NULL,
   is_authentic_business_photo BOOLEAN NOT NULL DEFAULT FALSE,
+  sort_order INTEGER NOT NULL DEFAULT 0,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE admin_credentials (
+CREATE TABLE IF NOT EXISTS admin_credentials (
   id INTEGER PRIMARY KEY DEFAULT 1,
   password_hash TEXT NOT NULL,
   salt TEXT NOT NULL,
   claimed_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS app_secrets (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS uploaded_files (
+  filename TEXT PRIMARY KEY,
+  mime_type TEXT NOT NULL,
+  data BYTEA NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

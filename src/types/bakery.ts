@@ -108,10 +108,44 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface OrderRequestItem {
+  itemId: string;
+  name: string;
+  category: string;
+  variantLabel?: string;
+  unitPrice: number;
+  quantity: number;
+}
+
+export interface OrderRequest {
+  id: string;
+  customerName: string;
+  mobileNumber: string;
+  fulfillment: 'Store Pickup' | 'Local Delivery Enquiry';
+  items: OrderRequestItem[];
+  estimatedSubtotal: number;
+  notes?: string;
+  status: 'New' | 'Confirmed' | 'Ready' | 'Completed' | 'Cancelled';
+  createdAt: string;
+}
+
+export interface ContactMessage {
+  id: string;
+  name: string;
+  phone: string;
+  email?: string;
+  subject: string;
+  message: string;
+  status: 'New' | 'Replied' | 'Resolved';
+  createdAt: string;
+}
+
 export interface StoreData {
   settings: SiteSettings;
   menuItems: MenuItem[];
   cakeCollections: CakeCollection[];
   gallery: GalleryItem[];
   enquiries: CakeEnquiry[];
+  orders: OrderRequest[];
+  contacts: ContactMessage[];
 }

@@ -764,4 +764,6 @@ export const INITIAL_STORE_DATA: StoreData = {
   cakeCollections: SEED_CAKE_COLLECTIONS,
   gallery: SEED_GALLERY,
   enquiries: [],
+  orders: [],
+  contacts: [],
 };
