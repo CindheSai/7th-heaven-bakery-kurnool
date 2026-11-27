@@ -1,7 +1,13 @@
 import { CakeSlice } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 import { useState } from 'react';
 
 export function BrandLogoIcon({ className = 'w-8 h-8' }: { className?: string }) {
+  return (
+    <img src={logo} alt="7th Heaven Bakery" className={className} />
+  );
+}
+
   return (
     <svg
       viewBox="0 0 40 40"
